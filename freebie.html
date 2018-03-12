@@ -66,7 +66,7 @@
 
 
     <div class="section section-header">
-        <div class="parallax filter filter-color-red">
+        <div id="firstgp" class="parallax">
             <!-- <div class="image"
                 style="background-image: url('assets/img/header-1.jpeg')">
             </div> -->
@@ -403,12 +403,32 @@
 <script src="js/geopattern-1.2.3.min.js"></script>
 
 <script type="text/javascript">
-    // Use the global...
-//var pattern = GeoPattern.generate('GitHub');
-//$('#geopattern').css('background-image', pattern.toDataUrl());
+        var colors = ['#8d45d8','#e52843','#3fa9f5','#7ac943','#ff6022'];
+        patterns_names = ['chevrons','plusSigns','chevrons','xes','sineWaves','overlappingRings','triangles','tessellation']
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-// ...or the plugin
-$('#geopattern').geopattern('GitHub');
+        //generate all possible patterns
+        patterns = []
+        for (var i = 0; i < colors.length; i++) {
+            for (var j = 0; j < patterns_names.length; j++) {
+                var p = GeoPattern.generate({string: (i*j).toString() , generator:patterns_names[j], color:colors[i]});
+                patterns.push(p);
+            };
+        };
+
+        var pattern = patterns[getRandomInt(0, patterns.length-1)];
+        var pattern = patterns[getRandomInt(0, patterns.length-1)];
+        $('#firstgp').css('background-image', pattern.toDataUrl());
+
+        
+            //var color_index = getRandomInt(0, colors.length);        
+            
+            //var size = sizes[getRandomInt(0, sizes.length-1)];
+            //var img =  $('<img>',{id:'b'+i,src:'assets/brain.png', width:size+'%',class:"grid-item"})
+            //$('#main').prepend(img)
+            
 </script>
 
 </html>
