@@ -16,6 +16,45 @@
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('skill1chart'));
+        chart.draw(data, options);
+      }
+    </script>
+
 </head>
 
 <body>
@@ -97,9 +136,22 @@
                 <div class="title-area">
                     <h2>Skills</h2>
                     <div class="separator separator-danger">✻</div>
-                    <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                    <p class="description">Hello! I have been employed as a software developer since 2010, and have worked on quite a few different things during that time. Currently, I am involved with open source projects using python, cloud computing and web development. Here is a list of of some technologies I am familiar with:</p>
                 </div>
             </div>
+
+            Python
+            Javascripts
+            Html/css
+            Machine Learning
+            Java
+            Linux
+            Algorithms
+            Github
+            Amazon Web Services
+            .NET
+
+            <div id="skill1chart"></div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="info-icon">
@@ -141,7 +193,7 @@
                         <div class="title-area">
                             <h2 class="white">Projects</h2>
                             <div class="separator line-separator white">✻</div>
-                            <p class="descriptioncolorful white">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                            <p class="descriptioncolorful white">I selected a few of my favorite projects. You can check all projects on my <a href="https://github.com/carolFrohlich" class="btn-link text-white"> <strong> Github page</strong></a>.</p>
                         </div>
                     </div>
 
@@ -156,7 +208,7 @@
                                                     <img alt="..." class="img-circle" src="assets/img/faces/face_1.jpg"/>
                                                 </div>
                                                 <div class="description">
-                                                    <h3 class="title">Tina</h3>
+                                                    <h3 class="title">C-PAC</h3>
                                                     <p class="small-text">CEO / Co-Founder</p>
                                                     <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
                                                 </div>
@@ -170,7 +222,7 @@
                                                     <img alt="..." class="img-circle" src="assets/img/faces/face_4.jpg"/>
                                                 </div>
                                                 <div class="description">
-                                                    <h3 class="title">Andrew</h3>
+                                                    <h3 class="title">Open Cog Lab</h3>
                                                     <p class="small-text">Product Designer</p>
                                                     <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
                                                 </div>
