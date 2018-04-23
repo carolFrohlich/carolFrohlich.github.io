@@ -3769,7 +3769,18 @@ body {
   font-family: FontAwesome;
 }
 
+.timeline {
+  list-style: none;
+}
 .timeline > li {
+  margin-bottom: 60px;
+}
+
+
+@media ( min-width : 640px ) {
+ 
+  /* Write CSS for desktop version */
+  .timeline > li {
   overflow: hidden;
   margin: 0;
   position: relative;
@@ -3785,6 +3796,9 @@ body {
   border-left: 3px #ffaaaf solid;
   padding-left: 30px;
 }
+ 
+}
+
 
 h3.timeline {
   font-size: 8px;
@@ -3799,4 +3813,10 @@ h3.timeline {
   left: 106px;
   top: 24px;
   border-radius: 100%;
+}
+
+@media ( min-width : 640px ) {
+ h1{font-size: 1em;}
+  /* Write CSS for desktop version */
+ 
 }
